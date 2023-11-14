@@ -1,38 +1,243 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body{
+  font-family: 'Inter', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo{
+  width: 90% !important;
+  margin-top: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.links{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 0px;
+}
+
+.links a{
+  cursor: pointer;
+  font-size: 16px;
+  color: rgb(75, 75, 75) !important;
+  padding: 10px 15px;
+}
+
+.links a:hover{
+  color: #4643ee !important;
+  background-color: #ededfe;
+  border-radius: 10px;
+}
+
+.links .active{
+  color: #4643ee !important;
+  background-color: #ededfe;
+  border-radius: 10px;
+}
+
+.dash-left{
+  height: 100vh;
+  border-right: 1px solid #e4e4e4;
+  position: sticky;
+  top: 0;
+}
+@media(max-width:767px) {
+  .dash-left{
+    position: static;
+  }
+}
+.dash-right{
+  height: 100%;
+  border-left: 1px solid #e4e4e4;
+}
+
+.top-buttons{
+  display: flex;
+   justify-content: space-between;
+   margin-top: 20px;
+}
+
+.top-left-buttons{
+  display: flex;
+  gap:30px;
+}
+
+.top-left-buttons button{
+  background-color: white;
+  border: none;
+  font-size: 18px;
+  padding: 0;
+  color: rgb(117, 117, 117) !important;
+}
+
+.top-right-buttons button{
+  background-color: #f6d8d8;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #d13b3b;
+}
+
+/* .top-left-buttons button:hover{
+  color: #4643ee !important;
+  text-decoration-line: underline;
+  text-underline-offset: 33px;
+  text-decoration-thickness: 2px;
+} */
+
+.top-left-buttons button.active{
+  color: #4643ee !important;
+  /* border-bottom: 1px solid #4643ee; */
+  text-decoration-line: underline;
+  text-underline-offset: 33px;
+  text-decoration-thickness: 2px;
+}
+
+.search-container input{
+  width: 400px !important;
+  border: 1px solid rgb(191, 191, 191);
+  padding: 7px 15px;
+  border-radius: 10px;
+}
+
+@media(max-width:660px){
+  .search-container input{
+    width: 100% !important;
+  }
+}
+.search-container input:focus{
+  outline: none;
+}
+.search-container{
+  display: flex;
+  gap: 15px;
+  flex-flow: wrap;
+}
+
+.search-container select{
+  border: none;
+  background-color: #f5f5f5;
+  padding: 10px;
+  color: rgb(79, 79, 79);
+  border-radius: 10px;
+  font-weight: 500;
+  width: 160px;
+}
+
+.search-container select:focus{
+  outline: none;
+}
+
+.tabl{
+  width: 100% !important;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px !important;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+thead{
+  background-color:#f5f5f5 ;
+  font-weight: 500;
+  font-size: 14px;
+}
+th,td{
+  padding: 15px;
+}
+td{
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.email{
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(63, 63, 63);
+}
+
+.risk-green{
+  color: #006540;
+}
+.risk-orange{
+  color:#88670f;
+}
+.risk-red{
+  color: #7d2424;
+}
+
+
+.profile{
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.profile-img img{
+  width: 40px;
+  border-radius: 50%;
+}
+
+.profile-name{
+  font-weight: 500;
+}
+.profile-email{
+  font-size: 12px;
+}
+
+.profile-name-con{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.modal-container{
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  position: fixed;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: rgba(100, 100, 100, 0.5);
+  z-index: 1000;
+}
+.pop-up{
+  background-color: white;
+  padding: 15px;
+  width:500px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.pop-up-button{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pop-up-button label{
+  font-size: 14px;
+  color: rgb(80, 80, 80);
+}
+
+.close-acc{
+  background-color: #4643ee;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
 }

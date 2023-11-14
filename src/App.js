@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, useNavigate } from "react-router-dom";
+import "./App.css";
+import Dashboard from "./pages/Dashboard";
+import Pending from "./pages/Pending";
+import Completed from "./pages/Completed";
 
 function App() {
+  const navigate = useNavigate();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Routes>
+        <Route path="/" element={<Dashboard />}>
+          <Route path="monitoring/pending" element={<Pending/>}></Route>
+          <Route path="monitoring/completed" element={<Completed/>}></Route>
+        </Route>
+      </Routes>
     </div>
   );
 }
